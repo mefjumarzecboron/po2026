@@ -10,33 +10,41 @@ import java.util.Random;
         Random random = new Random();
         Animal[] animals = new Animal[100];
 
-        public Zoo(){
+        public Zoo() {
             int losowa;
-            for(int i = 0; i < animals.length; i++){
+            for (int i = 0; i < animals.length; i++) {
                 losowa = random.nextInt(3);
 
-                if(losowa == 0){
+                if (losowa == 0) {
                     animals[i] = new Dog("Pies" + i);
                 } else if (losowa == 1) {
                     animals[i] = new Parrot("Papuga" + i);
-                } else{
+                } else {
                     animals[i] = new Snake("wąż" + i);
                 }
             }
         }
-        public int sumLegs(){
+
+        public int sumLegs() {
             int sum = 0;
-            for(int i = 0; i < animals.length; i++){
+            for (int i = 0; i < animals.length; i++) {
                 sum += animals[i].getLegs();
             }
             return sum;
         }
 
-        public static void main(String[] args){
-            Zoo zoo = new Zoo();
-            System.out.println("Suma nog: " + zoo.sumLegs());
+        public void makeAllSounds() {
+            for (int i = 0; i < animals.length; i++) {
+                animals[i].makeSound();
+            }
         }
 
+        public static void main(String[] args) {
+            Zoo zoo = new Zoo();
+            System.out.println("Suma nog: " + zoo.sumLegs());
+            zoo.makeAllSounds();
         }
+    }
+
 
 

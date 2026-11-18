@@ -27,4 +27,4 @@ public class lotto {
         System.out.println("Czas: " + time + " ms");
     }
 }
-}
+
